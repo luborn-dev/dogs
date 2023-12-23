@@ -1,5 +1,4 @@
 module.exports = {
-  root: true,
   env: {
     browser: true,
   },
@@ -8,6 +7,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
   ],
   parserOptions: {
     ecmaVersion: "latest",
@@ -20,6 +20,11 @@ module.exports = {
     react: {
       version: "detect",
     },
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
   },
   plugins: ["react-refresh"],
   rules: {
@@ -29,5 +34,10 @@ module.exports = {
     "no-unsafe-finally": "off",
     "no-unused-vars": "off",
     "react/jsx-key": "off",
+    "import/no-unresolved": "error",
+    "import/named": "error",
+    "import/default": "error",
+    "import/namespace": "error",
+    "react/jsx-uses-react": "error",
   },
 };
