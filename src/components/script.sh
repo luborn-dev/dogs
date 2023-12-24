@@ -15,7 +15,8 @@ touch "${folder_name}.jsx"
 touch index.js
 
 # Create the .module.css file
-touch "${folder_name}.module.css"
+lowercase_folder_name=$(echo "$folder_name" | tr '[:upper:]' '[:lower:]')
+touch "${lowercase_folder_name}.module.css"
 
 # Print a message indicating success
 echo "Folder '$folder_name' and files created successfully."
