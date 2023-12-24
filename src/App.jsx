@@ -7,6 +7,7 @@ import "./App.css";
 import { UserStorage } from "./UserContext";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./Components/Helper/ProtectedRoute/ProtectedRoute";
 
 const App = () => {
   return (
@@ -15,8 +16,16 @@ const App = () => {
         <UserStorage>
           <Header></Header>
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/login/*" element={<Login />}></Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/*" element={<Login />} />
+            <Route
+              path="/conta/*"
+              element={
+                <ProtectedRoute>
+                  <User />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
           <Footer></Footer>
         </UserStorage>
