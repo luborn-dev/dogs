@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Home from "./Components/Home";
+import Header from "./Components/Header/index";
+import Footer from "./Components/Footer/index";
+import Home from "./Components/Home/index";
 import Login from "./Components/Login/Login";
 import { UserStorage } from "./UserContext";
 import User from "./Components/User/User";
