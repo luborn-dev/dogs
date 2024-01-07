@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://luborn-dev.github.io/dogs-web-app",
   "scripts": {
     "gen": "cd src/components && npx component-files-helper $npm_config_argv",
     "dev": "vite",
