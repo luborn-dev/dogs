@@ -8,7 +8,7 @@ body {
   padding-top: 4rem;
   margin: 0px;
   color: #333;
-  --type-first: Helvetica, Arial, Sans-serif;
+  --type-first: Helvetica, Arial, sans-serif;
   --type-second: "Spectral", georgia;
   font-family: var(--type-first);
 }
@@ -24,8 +24,8 @@ p {
 ul,
 li {
   list-style: none;
-  border: 0px;
   padding: 0px;
+  margin: 0px;
 }
 
 img {
@@ -41,6 +41,11 @@ input {
   color: #333;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+}
+
 .container {
   max-width: 50rem;
   padding: 0 1rem;
@@ -48,12 +53,7 @@ input {
 }
 
 .mainContainer {
-  margin-top: 4rem;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
+  margin-top: 2rem;
 }
 
 .title {
@@ -89,4 +89,18 @@ a {
     opacity: 1;
     transform: initial;
   }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1;
+}
+
+.VictoryContainer {
+  height: initial !important;
 }

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const useMedia = (media) => {
-  const [match, setMatch] = useState(null);
+  const [match, setMatch] = React.useState(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     function changeMatch() {
       const { matches } = window.matchMedia(media);
       setMatch(matches);

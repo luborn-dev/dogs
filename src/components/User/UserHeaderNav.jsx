@@ -10,27 +10,20 @@ import styles from "./userheadernav.module.css";
 import useMedia from "../../Hooks/useMedia";
 
 const UserHeaderNav = () => {
-  const { userLogout } = useContext(UserContext);
-
-  const navigate = useNavigate();
-  const [mobileMenu, setMobileMenu] = useState(false);
+  const { userLogout } = React.useContext(UserContext);
   const mobile = useMedia("(max-width: 40rem)");
+  const [mobileMenu, setMobileMenu] = React.useState(false);
+  const navigate = useNavigate();
+
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    setMobileMenu(false);
+  }, [pathname]);
 
   function handleLogout() {
     userLogout();
     navigate("/login");
   }
-
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    setMobileMenu(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    console.log("m -> ", mobile);
-    console.log("mm -> ", mobileMenu);
-  }, [mobile, mobileMenu]);
 
   return (
     <>
@@ -43,6 +36,7 @@ const UserHeaderNav = () => {
           onClick={() => setMobileMenu(!mobileMenu)}
         ></button>
       )}
+
       <nav
         className={`${mobile ? styles.navMobile : styles.nav} ${
           mobileMenu && styles.navMobileActive
@@ -52,17 +46,14 @@ const UserHeaderNav = () => {
           <MinhasFotos />
           {mobile && "Minhas Fotos"}
         </NavLink>
-
         <NavLink to="/conta/estatisticas">
           <Estatisticas />
           {mobile && "Estatísticas"}
         </NavLink>
-
         <NavLink to="/conta/postar">
           <AdicionarFoto />
           {mobile && "Adicionar Foto"}
         </NavLink>
-
         <button onClick={handleLogout}>
           <Sair />
           {mobile && "Sair"}

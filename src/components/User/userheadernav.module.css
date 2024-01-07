@@ -11,8 +11,8 @@
   height: 40px;
   width: 40px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   border: 1px solid transparent;
   transition: 0.1s;
   cursor: pointer;
@@ -28,13 +28,13 @@
   outline: none;
 }
 
-.nav a:global(.active) {
+.nav :global(a.active) {
   background: white;
   box-shadow: 0 0 0 3px #fea;
   border-color: #fb1;
 }
 
-.nav a:global(.active) svg > * {
+.nav :global(a.active) svg > * {
   fill: #fb1;
 }
 
@@ -73,8 +73,8 @@
   color: #fb1;
 }
 
-.mobileButtonActive:after {
-  transform: rotate(-90deg);
+.mobileButtonActive::after {
+  transform: rotate(90deg);
   width: 4px;
   height: 4px;
   box-shadow: 0 8px currentColor, 0 -8px currentColor;

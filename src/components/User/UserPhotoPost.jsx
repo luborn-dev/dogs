@@ -23,7 +23,6 @@ const UserPhotoPost = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-
     const formData = new FormData();
     formData.append("img", img.raw);
     formData.append("nome", nome.value);

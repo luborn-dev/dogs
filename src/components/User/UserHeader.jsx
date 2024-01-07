@@ -4,17 +4,17 @@ import styles from "./userheader.module.css";
 import { useLocation } from "react-router-dom";
 
 const UserHeader = () => {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = React.useState("");
   const location = useLocation();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const { pathname } = location;
     switch (pathname) {
+      case "/conta/postar":
+        setTitle("Poste Sua Foto");
+        break;
       case "/conta/estatisticas":
         setTitle("Estatísticas");
-        break;
-      case "/conta/postar":
-        setTitle("Poste sua Foto");
         break;
       default:
         setTitle("Minha Conta");
